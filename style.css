@@ -1,0 +1,14 @@
+.navbar {
+    text-align: center;
+}
+.col-md-3 {
+    background-color: #ccc;
+}
+.col-md-1 {
+    float: left;
+}
+
+.city-btn {
+    width: 90%;
+    margin: auto;
+}
