@@ -3,15 +3,10 @@ var cities = ["atlanta", "cincinnati", "orlando", "austin"];
 $("#submit").on("click", function (event) {
     event.preventDefault();
 
-    var city = $("#cityInput").val().trim();
-    
-    
     // Adding city from the textbox to our array
+    var city = $("#cityInput").val().trim();
     cities.push(city);
-    
     getCityInfo(city);
-    
-    // Calling renderButtons which handles the processing of our cities array
     renderButtons();
 });
 
@@ -34,8 +29,8 @@ function getCityInfo(city) {
 
             // Transfer content to HTML
             $(".city").text(response.name);
-            $(".wind").text("Wind Speed: " + response.wind.speed);
-            $(".humidity").text("Humidity: " + response.main.humidity);
+            $(".wind").text("Wind Speed: " + response.wind.speed + " MPH");
+            $(".humidity").text("Humidity: " + response.main.humidity + " %");
 
             // Convert the temp to fahrenheit
             var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -47,6 +42,35 @@ function getCityInfo(city) {
             console.log("Wind Speed: " + response.wind.speed);
             console.log("Humidity: " + response.main.humidity);
             console.log("Temperature (F): " + tempF);
+            
+            // forecast blocks
+            var forecastDiv = $(".forecast");
+            var row = $("<div>");
+            row.addClass("row");
+            forecastDiv.html(row);
+
+            for(var i = 0; i < 5; i++){
+                var column = $("<div>");
+                column.addClass("col-md-2");
+
+                var forecastDate = $("<h5>");
+                forecastDate.text("(08/29/2020)");
+                column.append(forecastDate);
+
+                var weatherImage = $("<img>");
+                weatherImage.attr("src", "#");
+                column.append(weatherImage);
+
+                var forecastTemp = $("<p>");
+                forecastTemp.text("Temperature: 75 F");
+                column.append(forecastTemp);
+
+                var forecastHum = $("<p>");
+                forecastHum.text("Humidity: 99%")
+                column.append(forecastHum);
+
+                row.append(column);
+            }
         });
 }
 
@@ -69,8 +93,6 @@ function renderButtons() {
         $("#buttons-view").append(a);
         
         a.click(function(){
-            console.log("clicked");
-            console.log($(this).text());
             getCityInfo($(this).text());
         })
     }
