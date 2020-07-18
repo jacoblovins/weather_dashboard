@@ -5,8 +5,10 @@ $("#submit").on("click", function (event) {
 
     // Adding city from the textbox to our array
     var city = $("#cityInput").val().trim();
-    cities.push(city);
     getCityInfo(city);
+    cities = JSON.parse(localStorage.getItem("cities"));
+    cities.push(city);
+    localStorage.setItem("cities", JSON.stringify(cities));
     renderButtons();
 });
 
@@ -78,13 +80,13 @@ function getCityInfo(city) {
             row.addClass("row");
             forecastDiv.html(row);
             
-            for (var i = 0; i < 5; i++) {
+            for (var i = 1; i < 6; i++) {
                 var column = $("<div>");
                 column.addClass("col-md-2");
                 
                 var forecastDate = $("<h5>");
                 
-                forecastDate.text(moment().add(i + 1, 'days').format('L'));
+                forecastDate.text(moment().add(i, 'days').format('L'));
                 column.append(forecastDate);
                 
                 var weatherImage = $("<img>");
@@ -112,6 +114,8 @@ function getCityInfo(city) {
 function renderButtons() {
 
     $("#buttons-view").empty();
+    
+    var cities = JSON.parse(localStorage.getItem("cities"));
 
     // Looping through the array of cities
     for (var i = 0; i < cities.length; i++) {
