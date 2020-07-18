@@ -14,7 +14,9 @@
     margin: auto;
 }
 input {
+    margin-top: 5px;
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 .col-md-2 {
@@ -25,4 +27,30 @@ input {
 }
 .mainContent {
     margin-top: 10px;
+}
+
+#uvIndex {
+    height: 30px;
+    width: 30px;
+}
+
+.good {
+    border-radius: 10px;
+    padding: 1%;
+    background-color: green;
+    color: white;
+}
+  
+.medium {
+    border-radius: 10px;
+    padding: 1%;
+    background-color: orange;
+    color: white;
+}
+  
+.bad {
+    border-radius: 10px;
+    padding: 1%;
+    background-color: red;
+    color: white;
 }
