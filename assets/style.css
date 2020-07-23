@@ -1,31 +1,46 @@
+/* Header */
 .navbar {
     text-align: center;
     padding: 0;
 }
-
 .h1 {
     font-size: 40px;
     padding: 0px;
 }
 
+/* Main content */
 .row {
     width: 100%;
 }
 
+/* Search for city */
 .col-md-3 {
     background-color: rgb(242, 241, 241);
     padding-top: 5px;
     padding-right: 0px;
 }
-.col-md-1 {
-    float: left;
-}
-
-#search {
+form, #searchLabel {
     margin-left: 3%;
 }
+input, #submit {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    float: left;
+}
+#submit {
+    background-color:  rgb(51, 109, 255);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+i {
+    color: white;
+}
 
-.city-btn {
+/* Stored city buttons */
+.city-btns {
     background-color: white;
     border: 1px solid #ccc;
     width: 93%;
@@ -35,67 +50,43 @@
     padding: 10px 30px;
 }
 
-form {
-    margin-left: 3%;
+/* Current Weather Box */
+.currentWeather {
+    margin-top: 10px;
+}
+#uvIndex {
+    height: 30px;
+    width: 30px;
 }
 
-input, #submit {
-    margin-top: 5px;
-    margin-bottom: 15px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    float: left;
-}
-
-#submit {
-    background-color:  rgb(51, 109, 255);
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-i {
+/* UV Index color changers */
+.bad {
+    background-color: red;
     color: white;
+    border-radius: 10px;
+    padding: 1%;
+}
+.medium {
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+    padding: 1%;
+}
+.good {
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 1%;
 }
 
-
+/* Forecast cards */
 #forecastLabel {
     margin-top: 20px;
 }
-
 .col-md-2 {
     background-color: rgb(51, 109, 255);
     margin: 15px;
     color: #fff;
     border-radius: 10px;
     padding-top: 10px;
-}
-.mainContent {
-    margin-top: 10px;
-}
-
-#uvIndex {
-    height: 30px;
-    width: 30px;
-}
-
-.good {
-    border-radius: 10px;
-    padding: 1%;
-    background-color: green;
-    color: white;
-}
-  
-.medium {
-    border-radius: 10px;
-    padding: 1%;
-    background-color: orange;
-    color: white;
-}
-  
-.bad {
-    border-radius: 10px;
-    padding: 1%;
-    background-color: red;
-    color: white;
 }

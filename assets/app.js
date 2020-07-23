@@ -151,7 +151,7 @@ function renderButtons() {
     for (var i = 0; i < cities.length; i++) {
 
         var a = $("<button>");
-        a.addClass("city-btn d-block");
+        a.addClass("city-btns d-block");
         a.attr("data-name", cities[i]);
         a.text(cities[i]);
         $("#buttons-view").append(a);
