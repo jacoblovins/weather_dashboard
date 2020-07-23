@@ -2,7 +2,7 @@
 
 This is a weather app that uses API's to provide the weather for your current location and allows the user to search for any cities weather. It then saves those recent searches as buttons.
 
-This app uses the openweathermap API, Moment.js, fontawesome, JQuery, AJAX GET requests, functions, loops, and more. 
+This app uses the openweathermap API, Moment.js, fontawesome, JQuery, AJAX GET requests, functions, loops, and more. Had to use a lot of error handling throughout to account for mistakes the user might make while typing.
 
 # Weather information for each city:
 

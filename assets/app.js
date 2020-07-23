@@ -14,7 +14,7 @@ function appInit() {
             return;
         }
     }
-};
+}
 appInit();
 
 function showPosition(position) {
@@ -22,16 +22,16 @@ function showPosition(position) {
     lon = position.coords.longitude;
     city = "lat=" + lat + "&lon=" + lon;
     getCityInfo(city);
-  }
+}
 
 
 // Adding city from the textbox to our array when submitted
 $("#submit").on("click", function (event) {
     event.preventDefault();
-    city = $("#cityInput").val()
+    city = $("#cityInput").val();
     if (!city || city.charAt(0).toUpperCase() + city.slice(1) === cities[cities.length - 1]) {
         $("#cityInput").val("");
-        return
+        return;
     } else {
         city = $("#cityInput").val().trim();
         citySearch = "q=" + $("#cityInput").val().trim();
@@ -50,11 +50,11 @@ function getCityInfo(city) {
     $.ajax({
         url: queryURL,
         method: "GET",
-        error: function() {
+        error: function () {
             alert("Please enter a valid city name!");
             cities.pop();
             localStorage.setItem("cities", JSON.stringify(cities));
-            return; 
+            return;
         }
     }).then(function (response) {
         renderButtons();
@@ -78,8 +78,8 @@ function getCityInfo(city) {
 
         // grab latitude and longitude from the current weather request
         // to use in the one call request
-        var lat = response.coord.lat
-        var lon = response.coord.lon
+        var lat = response.coord.lat;
+        var lon = response.coord.lon;
 
         // second AJAX request to get UVI and forecast
         queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,minutely&appid=6dd517d7d80637aeefd4b8c64f476918";
@@ -99,7 +99,7 @@ function getCityInfo(city) {
                 $("#uvIndex").addClass("medium");
             } else {
                 $("#uvIndex").addClass("bad");
-            };
+            }
 
             $("#uvIndex").text(response.current.uvi);
 
@@ -133,7 +133,7 @@ function getCityInfo(city) {
                 column.append(forecastTemp);
 
                 var forecastHum = $("<p>");
-                forecastHum.text("Humidity: " + response.daily[i].humidity + " %")
+                forecastHum.text("Humidity: " + response.daily[i].humidity + " %");
                 column.append(forecastHum);
 
                 // append each block to the row
@@ -158,9 +158,9 @@ function renderButtons() {
 
         // get the weather for the city button clicked
         a.click(function () {
-            citySearch = "q=" + $(this).text()
+            citySearch = "q=" + $(this).text();
             getCityInfo(citySearch);
-        })
+        });
     }
 }
 
