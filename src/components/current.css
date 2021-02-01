@@ -1,0 +1,27 @@
+.currentWeather {
+    margin-top: 10px;
+}
+#uvIndex {
+    height: 30px;
+    width: 30px;
+}
+
+/* UV Index color changers */
+.bad {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    padding: 1%;
+}
+.medium {
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+    padding: 1%;
+}
+.good {
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 1%;
+}

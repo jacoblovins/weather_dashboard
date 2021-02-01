@@ -1,0 +1,9 @@
+.city-btns {
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 93%;
+    margin: auto;
+    color: rgb(84, 83, 83);
+    text-align: left;
+    padding: 10px 30px;
+}

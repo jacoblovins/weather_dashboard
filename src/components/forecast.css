@@ -1,0 +1,11 @@
+/* Forecast cards */
+#forecastLabel {
+    margin-top: 20px;
+}
+.col-md-2 {
+    background-color: rgb(51, 109, 255);
+    margin: 15px;
+    color: #fff;
+    border-radius: 10px;
+    padding-top: 10px;
+}

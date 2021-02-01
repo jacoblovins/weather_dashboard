@@ -1,0 +1,24 @@
+.col-md-3 {
+    background-color: rgb(242, 241, 241);
+    padding-top: 5px;
+    padding-right: 0px;
+}
+form, #searchLabel {
+    margin-left: 3%;
+}
+input, #submit {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    float: left;
+}
+#submit {
+    background-color:  rgb(51, 109, 255);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+i {
+    color: white;
+}

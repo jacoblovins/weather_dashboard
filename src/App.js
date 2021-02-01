@@ -6,7 +6,17 @@ import WeatherContainer from './components/WeatherContainer';
 function App() {
 
   useEffect(() => {
-    
+      if (localStorage.getItem("cities")) {
+          cities = (JSON.parse(localStorage.getItem("cities")));
+          const lastItem = "q=" + cities[cities.length - 1];
+          getCityInfo(lastItem);
+      } else {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+          } else {
+              return;
+          }
+      } 
   }, [])
 
 
